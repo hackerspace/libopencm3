@@ -1,7 +1,27 @@
-/* This provides unification of code over STM32 subfamilies */
-
+/** @defgroup exti_defines EXTI Defines
+ *
+ * @brief <b>Defined Constants and Types for the GD32VF103 External Interrupts
+ * </b>
+ *
+ * @ingroup GD32VF103_defines
+ *
+ * @author @htmlonly &copy; @endhtmlonly 2013
+ * Piotr Esden-Tempski <piotr@esden.net>
+ *
+ * @author @htmlonly &copy; @endhtmlonly 2020
+ * Lubomir Rintel <lkundrak@v3.sk>
+ *
+ * @version 1.0.0
+ *
+ * @date 10 Jun 2020
+ *
+ * LGPL License Terms @ref lgpl_license
+ */
 /*
  * This file is part of the libopencm3 project.
+ *
+ * Copyright (C) 2013 Piotr Esden-Tempski <piotr@esden.net>
+ * Copyright (C) 2020 Lubomir Rintel <lkundrak@v3.sk>
  *
  * This library is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -17,26 +37,10 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <libopencm3/cm3/common.h>
-#include <libopencm3/stm32/memorymap.h>
+#ifndef LIBOPENCM3_EXTI_H
+#define LIBOPENCM3_EXTI_H
 
-#if defined(STM32F0)
-#       include <libopencm3/stm32/f0/rtc.h>
-#elif defined(STM32F1)
-#       include <libopencm3/stm32/f1/rtc.h>
-#elif defined(STM32F2)
-#       include <libopencm3/stm32/f2/rtc.h>
-#elif defined(STM32F4)
-#       include <libopencm3/stm32/f4/rtc.h>
-#elif defined(STM32L0)
-#       include <libopencm3/stm32/l0/rtc.h>
-#elif defined(STM32L1)
-#       include <libopencm3/stm32/l1/rtc.h>
-#elif defined(STM32L4)
-#       include <libopencm3/stm32/l4/rtc.h>
-#elif defined(GD32VF103)
-#	include <libopencm3/gd32v/f103/rtc.h>
-#else
-#       error "stm32 family not defined."
+#include <libopencm3/stm32/common/exti_common_all.h>
+#include <libopencm3/stm32/common/exti_common_v1.h>
+
 #endif
-

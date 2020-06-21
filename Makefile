@@ -38,6 +38,7 @@ TARGETS ?=	stm32/f0 stm32/f1 stm32/f2 stm32/f3 stm32/f4 stm32/f7 \
 		pac55xx
 else
 PREFIX ?=	riscv-nuclei-elf-
+TARGETS	?=	gd32v/f103
 endif
 
 # Be silent per default, but 'make V=1' will show all compiler calls.
