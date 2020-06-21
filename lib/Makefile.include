@@ -24,7 +24,11 @@ Q := @
 endif
 
 # common objects
+ifneq ($(ARCH),riscv)
 OBJS += vector.o systick.o scb.o nvic.o assert.o sync.o dwt.o
+else
+OBJS += vector.o systick.o eclic.o
+endif
 
 # Slightly bigger .elf files but gains the ability to decode macros
 DEBUG_FLAGS ?= -ggdb3
