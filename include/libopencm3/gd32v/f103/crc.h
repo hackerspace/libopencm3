@@ -1,7 +1,24 @@
-/* This provides unification of code over STM32 subfamilies */
+/** @defgroup crc_defines CRC Defines
 
+@brief <b>libopencm3 Defined Constants and Types for the GD32VF103 CRC
+Generator </b>
+
+@ingroup STM32F_defines
+
+@version 1.0.0
+
+@date 10 Jun 2020
+
+@author @htmlonly &copy; @endhtmlonly 2020
+Lubomir Rintel <lkundrak@v3.sk>
+
+LGPL License Terms @ref lgpl_license
+ */
 /*
  * This file is part of the libopencm3 project.
+ *
+ * Copyright (C) 2010 Thomas Otto <tommi@viadmin.org>
+ * Copyright (C) 2020 Lubomir Rintel <lkundrak@v3.sk>
  *
  * This library is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -17,26 +34,4 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <libopencm3/cm3/common.h>
-#include <libopencm3/stm32/memorymap.h>
-
-#if defined(STM32F0)
-#       include <libopencm3/stm32/f0/rtc.h>
-#elif defined(STM32F1)
-#       include <libopencm3/stm32/f1/rtc.h>
-#elif defined(STM32F2)
-#       include <libopencm3/stm32/f2/rtc.h>
-#elif defined(STM32F4)
-#       include <libopencm3/stm32/f4/rtc.h>
-#elif defined(STM32L0)
-#       include <libopencm3/stm32/l0/rtc.h>
-#elif defined(STM32L1)
-#       include <libopencm3/stm32/l1/rtc.h>
-#elif defined(STM32L4)
-#       include <libopencm3/stm32/l4/rtc.h>
-#elif defined(GD32VF103)
-#	include <libopencm3/gd32v/f103/rtc.h>
-#else
-#       error "stm32 family not defined."
-#endif
-
+#include <libopencm3/stm32/f1/crc.h>
