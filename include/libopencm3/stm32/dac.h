@@ -38,6 +38,8 @@
 #       include <libopencm3/stm32/l4/dac.h>
 #elif defined(STM32H7)
 #       include <libopencm3/stm32/h7/dac.h>
+#elif defined(GD32VF103)
+#	include <libopencm3/gd32v/f103/dac.h>
 #else
 #       error "stm32 family not defined."
 #endif
