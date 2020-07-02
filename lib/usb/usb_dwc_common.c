@@ -119,12 +119,23 @@ void dwc_endpoints_reset(usbd_device *usbd_dev)
 	usbd_dev->fifo_mem_top = usbd_dev->fifo_mem_top_ep0;
 
 	/* Disable any currently active endpoints */
+
 	for (i = 1; i < 4; i++) {
 		if (REBASE(OTG_DOEPCTL(i)) & OTG_DOEPCTL0_EPENA) {
+	/* XXX - On GD32VF103 the EPDIS bit doesn't reset itself, not does it seem
+	 * possible to set it back to zero. The datasheet doesn't document it. */
+#if defined(__riscv)
+			REBASE(OTG_DOEPCTL(i)) &= ~OTG_DOEPCTL0_EPENA;
+#else
 			REBASE(OTG_DOEPCTL(i)) |= OTG_DOEPCTL0_EPDIS;
+#endif
 		}
 		if (REBASE(OTG_DIEPCTL(i)) & OTG_DIEPCTL0_EPENA) {
+#if defined(__riscv)
+			REBASE(OTG_DIEPCTL(i)) &= ~OTG_DIEPCTL0_EPENA;
+#else
 			REBASE(OTG_DIEPCTL(i)) |= OTG_DIEPCTL0_EPDIS;
+#endif
 		}
 	}
 
