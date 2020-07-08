@@ -996,8 +996,6 @@ void rcc_clock_setup_pll(const struct rcc_clock_scale *clock)
 		if (clock->pll_prediv1src == RCC_CFGR2_PREDIV1SRC_PLL2_CLK) {
 			rcc_set_prediv2(clock->pll_prediv2);
 			rcc_set_pll2_multiplication_factor(clock->pll_mul2);
-
-			/* Enable PLL oscillator and wait for it to stabilize. */
 			rcc_osc_on(RCC_PLL2);
 			rcc_wait_for_osc_ready(RCC_PLL2);
 		}

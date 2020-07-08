@@ -33,10 +33,10 @@
 #include <libopencm3/gd32v/eclic.h>
 
 /** Type of an interrupt function. Only used to avoid hard-to-read function
- * pointers in the efm32_vector_table_t struct. */
+ * pointers in the vector_table_t struct. */
 typedef void (*vector_table_entry_t)(void);
 
-typedef struct {
+struct vector_table_t {
 	/* vector_table_entry_t reserved_x0000[3];
 	 * The first three unused entries are not specified and the linker
 	 * script offsets the table by 0xc bytes. This is because on a GD32
@@ -52,9 +52,13 @@ typedef struct {
 	vector_table_entry_t bus_fault;
 	vector_table_entry_t performance_monitor;
 	vector_table_entry_t irq[NVIC_IRQ_COUNT];
-} vector_table_t;
+};
 
-/* Common symbols exported by the linker script(s): */
+/* Symbols exported by the linker script(s): */
 extern unsigned _data_loadaddr, _data, _edata, _ebss, _stack;
+typedef void (*funcp_t) (void);
+extern funcp_t __preinit_array_start, __preinit_array_end;
+extern funcp_t __init_array_start, __init_array_end;
+extern funcp_t __fini_array_start, __fini_array_end;
 
 #endif

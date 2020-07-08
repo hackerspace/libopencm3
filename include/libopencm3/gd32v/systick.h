@@ -16,9 +16,22 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-// https://doc.nucleisys.com/nuclei_spec/isa/timer.html
-
+/** @defgroup CM3_systick_defines GD32V SysTick Defines
+ *
+ * @brief <b>libopencm3 Defined Constants and Types for the GD32V SysTick </b>
+ *
+ * @ingroup CM3_defines
+ *
+ * @version 1.0.0
+ *
+ * @author @htmlonly &copy; @endhtmlonly 2020 Lubomir Rintel <lkundrak@v3.sk>
+ *
+ * @date 8 July 2020
+ *
+ * @see https://doc.nucleisys.com/nuclei_spec/isa/timer.html
+ * LGPL License Terms @ref lgpl_license
+ */
+/**@{*/
 #ifndef LIBOPENCM3_SYSTICK_H
 #define LIBOPENCM3_SYSTICK_H
 
@@ -50,3 +63,4 @@ void systick_interrupt_disable(void);
 END_DECLS
 
 #endif
+/**@}*/

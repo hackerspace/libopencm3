@@ -34,8 +34,6 @@
  */
 /**@{*/
 
-// https://doc.nucleisys.com/nuclei_spec/isa/eclic.html
-
 #ifndef LIBOPENCM3_ECLIC_H
 #define LIBOPENCM3_ECLIC_H
 

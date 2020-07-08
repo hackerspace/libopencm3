@@ -27,12 +27,6 @@
 /* load the weak symbols for IRQ_HANDLERS */
 #include "../dispatch/vector_nvic.c"
 
-/* Less common symbols exported by the linker script(s): */
-typedef void (*funcp_t) (void);
-extern funcp_t __preinit_array_start, __preinit_array_end;
-extern funcp_t __init_array_start, __init_array_end;
-extern funcp_t __fini_array_start, __fini_array_end;
-
 int main(void);
 void reset_handler(void);
 void blocking_handler(void);
@@ -41,7 +35,7 @@ void null_handler(void);
 static void __attribute__((naked, noreturn)) start(void)
 {
 	__attribute__ ((section(".vectors")))
-	static vector_table_t vector_table = {
+	static struct vector_table_t vector_table = {
 		.sv_call = sv_call_handler,
 		.systick = sys_tick_handler,
 		.bus_fault = bus_fault_handler,
@@ -50,7 +44,7 @@ static void __attribute__((naked, noreturn)) start(void)
 			IRQ_HANDLERS
 		}
 	};
-	volatile unsigned *src, *dest;
+	unsigned *src, *dest;
 	funcp_t *fp;
 
 	/* Initialize stack pointer. Stack must not be used before this. */

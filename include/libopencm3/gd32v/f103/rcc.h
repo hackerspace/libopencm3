@@ -102,7 +102,7 @@
 #define RCC_CFGR_USBPRE				(3 << RCC_CFGR_USBPRE_SHIFT)
 
 #define RCC_CFGR_PLLMUL_0_3_SHIFT		18
-#define RCC_CFGR_PLLMUL_0_3			(0xF << RCC_CFGR_PLLMUL_0_3_SHIFT)
+#define RCC_CFGR_PLLMUL_0_3			(0xf << RCC_CFGR_PLLMUL_0_3_SHIFT)
 
 #define RCC_CFGR_PLLSRC				(1 << 16)
 
@@ -116,7 +116,7 @@
 #define RCC_CFGR_PPRE1				(7 << RCC_CFGR_PPRE1_SHIFT)
 
 #define RCC_CFGR_HPRE_SHIFT			4
-#define RCC_CFGR_HPRE				(0xF << RCC_CFGR_HPRE_SHIFT)
+#define RCC_CFGR_HPRE				(0xf << RCC_CFGR_HPRE_SHIFT)
 
 #define RCC_CFGR_SWS_SHIFT			2
 #define RCC_CFGR_SWS				(3 << RCC_CFGR_SWS_SHIFT)
@@ -408,16 +408,16 @@
 /**@}*/
 
 #define RCC_CFGR2_PLL3MUL_SHIFT			12
-#define RCC_CFGR2_PLL3MUL			(0xF << RCC_CFGR2_PLL3MUL_SHIFT)
+#define RCC_CFGR2_PLL3MUL			(0xf << RCC_CFGR2_PLL3MUL_SHIFT)
 
 #define RCC_CFGR2_PLL2MUL_SHIFT			8
-#define RCC_CFGR2_PLL2MUL			(0xF << RCC_CFGR2_PLL2MUL_SHIFT)
+#define RCC_CFGR2_PLL2MUL			(0xf << RCC_CFGR2_PLL2MUL_SHIFT)
 
 #define RCC_CFGR2_PREDIV2_SHIFT			4
-#define RCC_CFGR2_PREDIV2			(0xF << RCC_CFGR2_PREDIV2_SHIFT)
+#define RCC_CFGR2_PREDIV2			(0xf << RCC_CFGR2_PREDIV2_SHIFT)
 
 #define RCC_CFGR2_PREDIV1_SHIFT			0
-#define RCC_CFGR2_PREDIV1			(0xF << RCC_CFGR2_PREDIV1_SHIFT)
+#define RCC_CFGR2_PREDIV1			(0xf << RCC_CFGR2_PREDIV1_SHIFT)
 
 /* PLL3MUL: PLL3 multiplication factor */
 #define RCC_CFGR2_PLL3MUL_PLL3_CLK_MUL8		0x6
@@ -565,26 +565,26 @@ enum rcc_periph_clken {
 	RCC_USART1	= _REG_BIT(0x18, 14),
 
 	/* APB1 peripherals */
-	RCC_TIM2	= _REG_BIT(0x1C, 0),
-	RCC_TIM3	= _REG_BIT(0x1C, 1),
-	RCC_TIM4	= _REG_BIT(0x1C, 2),
-	RCC_TIM5	= _REG_BIT(0x1C, 3),
-	RCC_TIM6	= _REG_BIT(0x1C, 4),
-	RCC_TIM7	= _REG_BIT(0x1C, 5),
-	RCC_WWDG	= _REG_BIT(0x1C, 11),
-	RCC_SPI2	= _REG_BIT(0x1C, 14),
-	RCC_SPI3	= _REG_BIT(0x1C, 15),
-	RCC_USART2	= _REG_BIT(0x1C, 17),
-	RCC_USART3	= _REG_BIT(0x1C, 18),
-	RCC_UART4	= _REG_BIT(0x1C, 19),
-	RCC_UART5	= _REG_BIT(0x1C, 20),
-	RCC_I2C1	= _REG_BIT(0x1C, 21),
-	RCC_I2C2	= _REG_BIT(0x1C, 22),
-	RCC_CAN1	= _REG_BIT(0x1C, 25),
-	RCC_CAN2	= _REG_BIT(0x1C, 26),
-	RCC_BKP		= _REG_BIT(0x1C, 27),
-	RCC_PWR		= _REG_BIT(0x1C, 28),
-	RCC_DAC		= _REG_BIT(0x1C, 29),
+	RCC_TIM2	= _REG_BIT(0x1c, 0),
+	RCC_TIM3	= _REG_BIT(0x1c, 1),
+	RCC_TIM4	= _REG_BIT(0x1c, 2),
+	RCC_TIM5	= _REG_BIT(0x1c, 3),
+	RCC_TIM6	= _REG_BIT(0x1c, 4),
+	RCC_TIM7	= _REG_BIT(0x1c, 5),
+	RCC_WWDG	= _REG_BIT(0x1c, 11),
+	RCC_SPI2	= _REG_BIT(0x1c, 14),
+	RCC_SPI3	= _REG_BIT(0x1c, 15),
+	RCC_USART2	= _REG_BIT(0x1c, 17),
+	RCC_USART3	= _REG_BIT(0x1c, 18),
+	RCC_UART4	= _REG_BIT(0x1c, 19),
+	RCC_UART5	= _REG_BIT(0x1c, 20),
+	RCC_I2C1	= _REG_BIT(0x1c, 21),
+	RCC_I2C2	= _REG_BIT(0x1c, 22),
+	RCC_CAN1	= _REG_BIT(0x1c, 25),
+	RCC_CAN2	= _REG_BIT(0x1c, 26),
+	RCC_BKP		= _REG_BIT(0x1c, 27),
+	RCC_PWR		= _REG_BIT(0x1c, 28),
+	RCC_DAC		= _REG_BIT(0x1c, 29),
 };
 
 enum rcc_periph_rst {
@@ -638,7 +638,6 @@ void rcc_osc_ready_int_disable(enum rcc_osc osc);
 int rcc_osc_ready_int_flag(enum rcc_osc osc);
 void rcc_css_int_clear(void);
 int rcc_css_int_flag(void);
-void rcc_wait_for_osc_ready(enum rcc_osc osc);
 void rcc_osc_on(enum rcc_osc osc);
 void rcc_osc_off(enum rcc_osc osc);
 void rcc_css_enable(void);
