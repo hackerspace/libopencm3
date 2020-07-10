@@ -21,7 +21,6 @@ STYLECHECK      := scripts/checkpatch.pl
 STYLECHECKFLAGS := --no-tree -f --terse --mailback
 
 ifneq ($(ARCH),riscv)
-PREFIX ?=	arm-none-eabi-
 TARGETS ?=	stm32/f0 stm32/f1 stm32/f2 stm32/f3 stm32/f4 stm32/f7 \
 		stm32/l0 stm32/l1 stm32/l4 \
 		stm32/g0 stm32/g4 \
@@ -37,7 +36,6 @@ TARGETS ?=	stm32/f0 stm32/f1 stm32/f2 stm32/f3 stm32/f4 stm32/f7 \
 		swm050 \
 		pac55xx
 else
-PREFIX ?=	riscv-none-elf-
 TARGETS	?=	gd32v/f103
 endif
 
@@ -70,7 +68,7 @@ LIB_DIRS:=$(wildcard $(addprefix lib/,$(TARGETS)))
 $(LIB_DIRS): $(IRQ_DEFN_FILES:=.genhdr)
 	$(Q)$(RM) .stamp_failure_$(subst /,_,$@)
 	@printf "  BUILD   $@\n";
-	$(Q)$(MAKE) --directory=$@ PREFIX="$(PREFIX)" || \
+	$(Q)$(MAKE) --directory=$@ || \
 		echo "Failure building: $@: code: $$?" > .stamp_failure_$(subst /,_,$@)
 
 lib: $(LIB_DIRS)

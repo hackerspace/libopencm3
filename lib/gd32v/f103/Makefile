@@ -20,6 +20,7 @@
 
 LIBNAME		= libopencm3_gd32vf103
 SRCLIBDIR	?= ../..
+ARCH		= riscv
 
 CC		= $(PREFIX)gcc
 AR		= $(PREFIX)ar

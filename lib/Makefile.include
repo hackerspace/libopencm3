@@ -30,6 +30,12 @@ else
 OBJS += vector.o systick.o eclic.o
 endif
 
+ifneq ($(ARCH),riscv)
+PREFIX ?= arm-none-eabi-
+else
+PREFIX ?= riscv-none-elf-
+endif
+
 # Slightly bigger .elf files but gains the ability to decode macros
 DEBUG_FLAGS ?= -ggdb3
 STANDARD_FLAGS ?= -std=c99
