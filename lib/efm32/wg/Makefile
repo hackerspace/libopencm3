@@ -59,6 +59,9 @@ OBJS += usb.o usb_control.o usb_standard.o usb_msc.o
 OBJS += usb_hid.o
 OBJS += usb_efm32.o
 
-VPATH += ../../usb:../:../../cm3:../common
+vpath %.c ../../usb
+vpath %.c ../
+vpath %.c ../../cm3
+vpath %.c ../common
 
 include ../../Makefile.include

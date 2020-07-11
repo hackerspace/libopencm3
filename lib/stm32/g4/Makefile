@@ -38,7 +38,10 @@ ARFLAGS		= rcs
 OBJS += gpio_common_all.o gpio_common_f0234.o
 OBJS += rcc_common_all.o
 
-VPATH += ../../usb:../:../../cm3:../common
-VPATH += ../../ethernet
+vpath %.c ../../usb
+vpath %.c ../
+vpath %.c ../../cm3
+vpath %.c ../common
+vpath %.c ../../ethernet
 
 include ../../Makefile.include
