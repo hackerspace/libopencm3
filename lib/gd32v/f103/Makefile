@@ -34,7 +34,6 @@ TGT_CFLAGS	= -Os \
 		  -ffunction-sections -fdata-sections -MD -DGD32VF103
 TGT_CFLAGS      += $(DEBUG_FLAGS)
 TGT_CFLAGS	+= $(STANDARD_FLAGS)
-# ARFLAGS	= rcsv
 ARFLAGS		= rcs
 
 OBJS += adc.o adc_common_v1.o
@@ -59,8 +58,11 @@ OBJS += usb.o usb_control.o usb_standard.o usb_msc.o
 OBJS += usb_hid.o
 OBJS += usb_dwc_common.o usb_f107.o
 
-#VPATH += ../../usb:../:../../cm3:../common:../../ethernet
-VPATH += ../../usb:../:../common:../../stm32/f1:../../stm32/common:../../stm32
+vpath %.c ../
+vpath %.c ../common
+vpath %.c ../../usb
+vpath %.c ../../stm32/f1
+vpath %.c ../../stm32/common
+vpath %.c ../../stm32
 
 include ../../Makefile.include
-
